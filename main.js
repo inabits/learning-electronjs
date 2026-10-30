@@ -6,10 +6,12 @@ function createWindow() {
     mainWindow = new BrowserWindow({
         width: 800,
         height: 400,
+        resizable: false,
         webPreferences: {
             nodeIntegration: true
         },
-        autoHideMenuBar: true
+        autoHideMenuBar: true,
+        frame: false
     });
 
     mainWindow.loadFile('index.html');
