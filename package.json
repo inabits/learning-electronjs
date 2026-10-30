@@ -19,5 +19,8 @@
   "homepage": "https://github.com/inabits/learning-electronjs#readme",
   "devDependencies": {
     "electron": "^45.1.0"
+  },
+  "dependencies": {
+    "tsparticles": "^4.5.0"
   }
 }
