@@ -2,15 +2,24 @@ const {app, BrowserWindow} = require('electron');
 
 let mainWindow;
 
-app.whenReady().then(() => {
+function createWindow() {
     mainWindow = new BrowserWindow({
         width: 800,
         height: 400,
         webPreferences: {
             nodeIntegration: true
-        }
+        },
+        autoHideMenuBar: true
     });
 
     mainWindow.loadFile('index.html');
 
+};
+
+app.whenReady().then(createWindow);
+
+app.on('window-all-closed', () => {
+    if (process.plataform !== 'darwin') {
+        app.quit();
+    }
 });

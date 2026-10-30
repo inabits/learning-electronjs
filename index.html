@@ -6,7 +6,19 @@
     <title>Clock</title>
 </head>
 <body>
-    <h1>Clock</h1>
-    <h3>Test</h3>
+    <div>
+        <div id="clock">Loading...</div>
+        <div id="day">Loading...</div>
+    </div>
+
+    <script>
+        setInterval(() => {
+
+            const now = new Date();
+            document.getElementById('clock').innerHTML = now.toLocaleTimeString();
+            document.getElementById('day').innerHTML = now.toLocaleDateString();
+
+        },1000);
+    </script>
 </body>
 </html>
